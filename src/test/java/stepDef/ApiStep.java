@@ -23,7 +23,7 @@ public class ApiStep {
 
     @Then("Validation status code is equal {int}")
     public void validationStatusCodeIsEqual(int status_code) {
-        apiPage.validationStatusCodeIsEqual();
+        apiPage.validationStatusCodeIsEqual(status_code);
     }
 
     @Then("Validation response body get list users")
@@ -33,6 +33,31 @@ public class ApiStep {
 
     @Then("Validation response json with JSONSchema {string}")
     public void validationResponseJsonWithJSONSchema(String filename) {
-        apiPage.validationResponseJsonWithJSONSchema();
+        apiPage.validationResponseJsonWithJSONSchema(filename);
+    }
+
+    @And("hit api for post create new user")
+    public void hitApiForPostCreateNewUser() {
+        apiPage.hitApiForPostCreateUsers();
+    }
+
+    @Then("Validation response body post create new user")
+    public void validationResponseBodyPostCreateNewUser() {
+        apiPage.validationResponseBodyCreateUser();
+    }
+
+    @And("hit api for delete user")
+    public void hitApiForDeleteUser() {
+        apiPage.hitApiForDeleteUsers();
+    }
+
+    @And("hit api for update data")
+    public void hitApiForUpdateData() {
+        apiPage.hitApiForUpdateData();
+    }
+
+    @Then("Validation response body update user")
+    public void validationResponseBodyUpdateUser() {
+        apiPage.validationResponseBodyUpdateUser();
     }
 }
