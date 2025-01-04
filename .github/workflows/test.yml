@@ -47,6 +47,7 @@ jobs:
       with:
         PERSONAL_TOKEN: ${{ secrets.TOKEN_GITHUB_ACTION }}
         PUBLISH_DIR: reports
+
   
   run-web-automation-test:
   
