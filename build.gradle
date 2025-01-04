@@ -7,6 +7,7 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url 'https://selenium-release.storage.googleapis.com' }
 }
 
 dependencies {
@@ -31,11 +32,13 @@ test {
     useJUnitPlatform()
     systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
 }
+
 configurations {
     cucumberRuntime {
         extendsFrom testImplementation
     }
 }
+
 tasks.register('apiTest') {
     dependsOn assemble, testClasses
     doLast {
@@ -51,6 +54,7 @@ tasks.register('apiTest') {
         }
     }
 }
+
 tasks.register('webTest') {
     dependsOn assemble, testClasses
     doLast {

@@ -82,9 +82,9 @@ Feature: Test Automation Web www.saucedemo.com
     And user will directed to the your cart page
     And user click btn checkout
     Then user will directed in your information page
-    And user input first name "Ad Maulana"
-    And user input last name "Rahman"
-    And user input postal code "73123"
+    And user input first name "Heri"
+    And user input last name "Setyo Aji"
+    And user input postal code "45312"
     And user click btn continue
     And user click btn finish
     Then user will directed in last page and sees the word "Thank you for your order!"
