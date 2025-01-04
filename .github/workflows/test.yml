@@ -6,14 +6,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-name: Web and API Automation workflow
-
-on:
-   workflow_dispatch:  # Manual trigger
-   pull_request:
-    branches: [ "main" ]  # Trigger on pull request events for the main branch
-
-
 jobs:
 
   run-api-automation-test:
@@ -52,9 +44,6 @@ jobs:
       with:
         PERSONAL_TOKEN: ${{ secrets.TOKEN_GITHUB_ACTION }}
         PUBLISH_DIR: reports
-
-  
-  
   
   run-web-automation-test:
   
