@@ -9,6 +9,13 @@ Feature: Test Automation Rest Api
     Then Validation response json with JSONSchema "get_list_users_normal.json"
 
   @api
+  Scenario: Test get list data with an invalid URL
+    Given prepare an invalid URL for the "INVALID_GOREST"
+    And hit api for get list users
+    Then Validation status code is equal 404
+    Then Validation response message should be "Not Found"
+
+  @api
   Scenario: Test Create New User Normal
     Given prepare url for "CREATE_NEW_USERS"
     And hit api for post create new user

@@ -23,6 +23,9 @@ public class ApiPage {
             case "USER_GOREST":
                 setURL = EndPoint.GET_LIST_USERS;
                 break;
+            case "INVALID_GOREST":
+                setURL = EndPoint.GET_LIST_USERS + "123";
+                break;
             case "CREATE_NEW_USERS":
                 setURL = EndPoint.CREATE_NEW_USERS;
                 break;
@@ -33,6 +36,10 @@ public class ApiPage {
                 System.out.println("input right url");
         }
         System.out.println("endpoint yang siap pakai: " + setURL);
+    }
+    public void theResponseMessageShouldBe (String arg0){
+        assertThat(res.statusLine()).contains(arg0);
+        System.out.println("The response message is " + arg0);
     }
     public void hitApiForGetListUsers(){
         res = getListUser(setURL);

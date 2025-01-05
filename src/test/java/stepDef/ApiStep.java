@@ -60,4 +60,14 @@ public class ApiStep {
     public void validationResponseBodyUpdateUser() {
         apiPage.validationResponseBodyUpdateUser();
     }
+
+    @Given("prepare an invalid URL for the {string}")
+    public void prepareAnInvalidURLForThe(String url) {
+        apiPage.prepareUrlFor(url);
+    }
+
+    @Then("Validation response message should be {string}")
+    public void validationResponseMessageShouldBe(String arg0) {
+        apiPage.theResponseMessageShouldBe(arg0);
+    }
 }
